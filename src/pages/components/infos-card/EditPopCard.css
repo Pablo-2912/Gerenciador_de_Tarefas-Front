@@ -1,0 +1,183 @@
+.popcard-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100dvw;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popcard-div-close {
+  position: relative;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 10px;
+}
+
+.popcard-close {
+  background: transparent;
+  border: none;
+  width: 10px;
+  font-size: 1.8rem;
+  top: 0px;
+  margin-top: 0;
+  padding: 0;
+  right: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.popcard-close:hover {
+  background-color: transparent; /* fundo transparente levinho */
+  border-radius: 50%; /* deixa arredondado, fica melhor no hover */
+}
+
+
+.popcard-card {
+  position: relative;
+  height: 90dvh;
+  width: 40dvw;
+  max-width: 500px;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px 20px 30px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: auto;
+}
+
+.popcard-title {
+  font-size: 1.2rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.char-count {
+  font-size: 0.8rem;
+  color: #999;
+  text-align: right;
+  margin-top: 2px;
+  margin-bottom: 8px;
+  user-select: none;
+}
+
+.error-message {
+  color: #d9534f;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.popcard-description {
+  flex: 1;
+  resize: vertical;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  min-height: 120px;
+  max-height: 40dvh;
+  box-sizing: border-box;
+}
+
+.popcard-div-botoes {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.popcard-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.popcard-col-delete,
+.popcard-col-save {
+  flex: 1 1 45%;
+  display: flex;
+  align-items: center;
+}
+
+.popcard-col-delete {
+  justify-content: flex-start;
+}
+
+.popcard-col-save {
+  justify-content: flex-end;
+}
+
+.popcard-btn-delete,
+.popcard-btn-save {
+  width: 100%;
+  height: 36px;
+  max-width: 200px;
+  min-width: 100px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  padding: 0 12px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.popcard-btn-delete {
+  background-color: #dc3545;
+}
+
+.popcard-btn-delete:hover {
+  background-color: #b02a37;
+}
+
+.popcard-btn-save {
+  background-color: #28a745;
+}
+
+.popcard-btn-save:hover {
+  background-color: #218838;
+}
+
+.popcard-btn-save:disabled {
+  cursor: not-allowed;
+  background-color: #6c757d;
+  opacity: 0.6 !important;
+}
+
+@media (max-width: 768px) {
+  .popcard-card {
+    width: 85vw !important;
+    height: 90dvh;
+  }
+  .popcard-row {
+    flex-direction: column;
+  }
+  .popcard-col-delete,
+  .popcard-col-save {
+    flex: 1 1 100%;
+    justify-content: center !important;
+  }
+  .popcard-btn-delete,
+  .popcard-btn-save {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+}

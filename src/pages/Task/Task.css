@@ -1,0 +1,168 @@
+.Task-container {
+  max-height: 70vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Task-content {
+  padding: 2%;
+  background-color: rgba(70, 70, 70, 0.09);
+  height: 90%;
+  width: 60%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Evita que o conteúdo vaze */
+  padding-top: 1%;
+}
+
+/* Cabeçalho fixo */
+.fixed-top {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 10px 15px;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Área que rola o conteúdo */
+.task-scrolable-content {
+  flex: 1;
+  overflow-y: auto;       /* scroll vertical ativado */
+  overflow-x: hidden;
+  margin-top: 15px;
+
+  /* scrollbar custom */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0) transparent;
+
+  /* scroll suave em iOS */
+  -webkit-overflow-scrolling: touch;
+
+  /* evita scroll “vazar” para o body */
+  overscroll-behavior: contain;
+
+  transition: scrollbar-color 0.3s ease;
+}
+
+/* Mostrar scroll quando hover, foco ou toque */
+.task-scrolable-content:hover,
+.task-scrolable-content:focus-within,
+.task-scrolable-content:active {
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+/* Estilização scrollbar WebKit */
+.task-scrolable-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: transparent;
+}
+
+.task-scrolable-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.task-scrolable-content:hover::-webkit-scrollbar-thumb,
+.task-scrolable-content:focus-within::-webkit-scrollbar-thumb,
+.task-scrolable-content:active::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Outros estilos */
+.task-row {
+  min-height: 50%;
+  margin-top: 20px;
+}
+
+.task-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+:root {
+  --status-button-color: rgba(37,184,0,0.53);
+  --status-button-hover: rgba(39,172,6,0.70 );
+  --status-button-selected: rgba(36,135,11,0.75);
+}
+
+.task-fixed-top {
+  position: sticky;
+}
+
+/* Centraliza conteúdo vertical e horizontal nas Cols */
+.task-status-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilização dos botões */
+.task-status-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--status-button-color);
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  min-width: 110px;
+  width: 95%;
+  height: 30px;
+  text-align: center;
+  line-height: 1;
+  padding: 0;
+}
+
+.task-status-button:hover {
+  background-color: var(--status-button-hover);
+  cursor: pointer;
+}
+
+/* Classe para botão selecionado */
+.task-status-button.selected {
+  background-color: var(--status-button-selected);
+}
+
+.task-status-button-add {
+  background-color: #58b2be;
+  transition: background-color 0.3s ease;
+}
+
+.task-status-button-add:hover {
+  background-color: #4997a1;
+  cursor: pointer;
+}
+
+.task-status-button-add:active {
+  background-color: #3f8990;
+}
+
+/* Classe para botão selecionado */
+.task-status-button-add.selected {
+  background-color: var(--status-button-selected);
+}
+
+@media (max-width: 768px) {
+  .Task-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .Task-content {
+    width: 95%;
+  }
+}

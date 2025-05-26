@@ -1,0 +1,194 @@
+:root {
+  /* Cores de fundo */
+  --color-pending-bg: rgba(135, 170, 177, 0.7);
+  --color-inProgress-bg: rgba(66, 170, 134, 0.52);
+  --color-completed-bg: rgba(83, 181, 101, 0.7);
+
+  /* Cores de fundo ao passar o mouse */
+  --color-pending-hover: rgba(135, 170, 177, 0.8);
+  --color-inProgress-hover: rgba(66, 170, 134, 0.6);
+  --color-completed-hover: rgba(83, 181, 101, 0.82);
+
+  /* Cores da borda */
+  --color-pending-border: #87AAB1;
+  --color-inProgress-border: rgba(66, 170, 134, 0.33);
+  --color-completed-border: rgba(83, 181, 101, 0.5);
+
+  /* Cores dos textos */
+  --pending-text: #799196;
+  --inProgress-text: rgb(61, 167, 130);
+  --completed-text: rgb(67, 161, 84);
+
+  /* Cores dos textos : hover */
+  --pending-text-hover: rgb(79, 112, 119);
+  --inProgress-text-hover: #2f8b67;
+  --completed-text-hover: #3a7c3a;
+
+    /* Tamanho da fonte base dos textos */
+  --font-size-text: 0.82rem;
+}
+.card-line {
+  pointer-events: none; /* Faz com que essa linha não interfira nos cliques */
+  z-index: 0;
+  position: relative; /* se não estiver definido */
+}
+
+
+.card-label-dataCriacao{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* Estilos comuns para todos os containers */
+.card-container {
+  position: relative;
+  min-height: 50%;
+  width: 90%;
+  border-radius: 8px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-height: 190px;
+  min-width: 180px;
+}
+
+.input-error {
+  border-color: rgb(240, 74, 74);
+}
+
+.error-message {
+  color: rgb(240, 74, 74);
+  font-size: 0.75rem;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+
+/* Linhas de borda do card */
+.card-line {
+  position: absolute;
+  inset: 8px;
+  border-radius: 8px;
+  background: transparent;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 2px;
+  cursor: pointer;
+}
+
+/* Conteúdo do card */
+.card-content {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  font-size: var(--font-size-text) /* Aplica tamanho menor a todos os textos internos */
+}
+
+.card-title{
+  max-width: 100%;
+}
+/* Título do card */
+.card-title label {
+  font-size: 1.4rem;
+  font-weight: 600;
+  max-width: 100%;
+  color: #fff;
+  word-wrap: break-word;      /* permite a quebra de palavras longas */
+  white-space: normal;        /* permite quebra de linha */
+  overflow-wrap: break-word;  /* suporte extra para navegadores modernos */
+  display: block;             /* garante que o label use a largura toda */
+}
+
+
+/* Cores dos textos normais */
+.card-content-pending {
+  color: var(--pending-text);
+}
+
+.card-content-inProgress {
+  color: var(--inProgress-text);
+}
+
+.card-content-completed {
+  color: var(--completed-text);
+}
+
+/* Cores dos textos ao passar o mouse sobre o card-container */
+.card-container-pending:hover .card-content-pending {
+  color: var(--pending-text-hover);
+}
+
+.card-container-inProgress:hover .card-content-inProgress {
+  color: var(--inProgress-text-hover);
+}
+
+.card-container-completed:hover .card-content-completed {
+  color: var(--completed-text-hover);
+}
+
+/* Cores de fundo padrão dos cards */
+.card-container-pending {
+  background-color: var(--color-pending-bg);
+}
+
+.card-container-inProgress {
+  background-color: var(--color-inProgress-bg);
+}
+
+.card-container-completed {
+  background-color: var(--color-completed-bg);
+}
+
+/* Cores ao passar o mouse */
+.card-container-pending:hover {
+  background-color: var(--color-pending-hover);
+}
+
+.card-container-inProgress:hover {
+  background-color: var(--color-inProgress-hover);
+}
+
+.card-container-completed:hover {
+  background-color: var(--color-completed-hover);
+}
+
+/* Cores da borda dos cards */
+.card-line-pending {
+  border-color: var(--color-pending-border);
+}
+
+.card-line-inProgress {
+  border-color: var(--color-inProgress-border);
+}
+
+.card-line-completed {
+  border-color: var(--color-completed-border);
+}
+
+/* Rodapé do card (com espaço entre itens) */
+.card-footer {
+  margin-top: auto; /* Cola no fundo da card-content */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+}
+
+/* Link no rodapé */
+.card-footer a {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 0.85rem;
+}
+
+.card-footer a:hover {
+  text-decoration: none;
+}
